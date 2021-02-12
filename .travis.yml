@@ -1,5 +1,9 @@
 dist: xenial
-
+notifications:
+  email:
+    recipients:
+      - juaferfer11@alum.us.es
+    on_failure: always
 services:
   - postgresql
 addons:
@@ -16,6 +20,6 @@ install:
   - pip install codacy-coverage
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test census --keepdb --with-xunit
+  - coverage run --branch --source=. ./manage.py test store --keepdb --with-xunit
   - coverage xml
   - python-codacy-coverage -r coverage.xml
