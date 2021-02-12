@@ -20,9 +20,6 @@ install:
   - pip install codacy-coverage
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test mixnet --keepdb 
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
 deploy:
   provider: heroku
   app: egc-2020-1230-juaferfer11
